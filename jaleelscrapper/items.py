@@ -10,7 +10,7 @@ import scrapy
 
 class JaleelscrapperItem(scrapy.Item):
     # define the fields for your item here like:
-    destination, = scrapy.Field()
+    destination = scrapy.Field()
     time = scrapy.Field()
     temperature = scrapy.Field()
     note = scrapy.Field()

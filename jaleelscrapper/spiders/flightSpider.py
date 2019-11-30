@@ -13,7 +13,7 @@ class FlightDestinationSpider(scrapy.Spider):
     def parse(self, response):
         json_data = json.loads(response.body)
 
-        flights = JaleelscrapperItem()
+        item = JaleelscrapperItem()
 
         for data in json_data['monitor']['departure']:
             note = ''
@@ -32,8 +32,8 @@ class FlightDestinationSpider(scrapy.Spider):
             else:
                 note = "Zmerno vreme"
 
-            flights['destination'] = destination
-            flights['time'] = time
-            flights['temperature'] = temperature
-            flights['note'] = note
-            yield flights
+            item['destination'] = destination
+            item['time'] = time
+            item['temperature'] = temperature
+            item['note'] = note
+            yield item
