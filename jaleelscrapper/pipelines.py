@@ -6,6 +6,7 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 import mysql.connector
 
+
 class JaleelscrapperPipeline(object):
 
     def __init__(self):
@@ -22,12 +23,12 @@ class JaleelscrapperPipeline(object):
 
     def create_table(self):
         self.curr.execute("""DROP TABLE IF EXISTS  flights_tb""")
-        self.curr.execute("""Create table flights_tb(
+        self.curr.execute("""CREATE TABLE flights_tb(
            id int primary key auto_increment,
-           destination varchar(45),
-           time varchar(45),
-           temperature varchar(45),
-           note varchar(45)
+           Destination VARCHAR(45),
+           Time TIME,
+           Temperature VARCHAR(45),
+           Note VARCHAR(45)
            )""")
 
     def process_item(self, item, spider):
@@ -35,7 +36,7 @@ class JaleelscrapperPipeline(object):
         return item
 
     def store_db(self, item):
-        self.curr.execute("""insert into flights_tb(destination,time,temperature,note) values(%s,%s,%s,%s)""",
+        self.curr.execute("""INSERT INTO flights_tb(destination,time,temperature,note) values(%s,%s,%s,%s)""",
                           (item['destination'],
                            item['time'],
                            item['temperature'],

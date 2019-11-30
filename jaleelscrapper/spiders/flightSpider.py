@@ -1,3 +1,4 @@
+import datetime
 import json
 import requests
 import scrapy
@@ -18,8 +19,12 @@ class FlightDestinationSpider(scrapy.Spider):
         for data in json_data['monitor']['departure']:
             note = ''
             destination = data['destinations'][0]['nameEN']
+
             time = data['scheduledatetime']
-            """ Make request to the weather API"""
+
+            formatted_time = datetime.datetime.strptime(time, '%Y-%m-%dT%H:%M:%fZ').time()
+
+            # Make request to the weather API and return response.
             r = self.get_weather_response(destination)
             weather_data = r.json()
 
@@ -34,7 +39,7 @@ class FlightDestinationSpider(scrapy.Spider):
                     note = "Zmerno vreme"
 
                 item['destination'] = destination
-                item['time'] = time
+                item['time'] = formatted_time
                 item['temperature'] = temperature
                 item['note'] = note
                 yield item
@@ -43,4 +48,4 @@ class FlightDestinationSpider(scrapy.Spider):
 
     def get_weather_response(self, destination):
         return requests.get(
-            "http://api.weatherstack.com/forecast?access_key=54641e77096d3e2d3b4c4e51c212e8f0&query=" + destination)
+            "http://api.weatherstack.com/forecast?access_key=3ffdb844e799259dbbbb67768547d033&query=" + destination)
