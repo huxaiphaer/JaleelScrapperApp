@@ -20,20 +20,27 @@ class FlightDestinationSpider(scrapy.Spider):
             destination = data['destinations'][0]['nameEN']
             time = data['scheduledatetime']
             """ Make request to the weather API"""
-            r = requests.get(
-                "http://api.weatherstack.com/forecast?access_key=54641e77096d3e2d3b4c4e51c212e8f0&query=" + destination)
+            r = self.get_weather_response(destination)
             weather_data = r.json()
-            temperature = weather_data["current"]["temperature"]
 
-            if temperature > 25:
-                note = "Let's go for a pint"
-            elif temperature < 5:
-                note = "!Que frio!"
-            else:
-                note = "Zmerno vreme"
+            try:
 
-            item['destination'] = destination
-            item['time'] = time
-            item['temperature'] = temperature
-            item['note'] = note
-            yield item
+                temperature = weather_data["current"]["temperature"]
+                if temperature > 25:
+                    note = "Let's go for a pint"
+                elif temperature < 5:
+                    note = "!Que frio!"
+                else:
+                    note = "Zmerno vreme"
+
+                item['destination'] = destination
+                item['time'] = time
+                item['temperature'] = temperature
+                item['note'] = note
+                yield item
+            except KeyError:
+                yield {"error": "error"}
+
+    def get_weather_response(self, destination):
+        return requests.get(
+            "http://api.weatherstack.com/forecast?access_key=54641e77096d3e2d3b4c4e51c212e8f0&query=" + destination)

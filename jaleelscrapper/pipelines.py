@@ -10,7 +10,6 @@ class JaleelscrapperPipeline(object):
 
     def __init__(self):
         self.create_connection()
-        self.create_dabatase()
         self.create_table()
 
     def create_connection(self):
@@ -20,9 +19,6 @@ class JaleelscrapperPipeline(object):
                                             database='flights_db'
                                             )
         self.curr = self.conn.cursor()
-
-    def create_dabatase(self):
-        self.curr.execute("""Create Database  flights_db""")
 
     def create_table(self):
         self.curr.execute("""DROP TABLE IF EXISTS  flights_tb""")
@@ -39,7 +35,7 @@ class JaleelscrapperPipeline(object):
         return item
 
     def store_db(self, item):
-        self.curr.execute("""insert into flights_tb(destination,time,temperature,note) values(%s,%s,%s)""",
+        self.curr.execute("""insert into flights_tb(destination,time,temperature,note) values(%s,%s,%s,%s)""",
                           (item['destination'],
                            item['time'],
                            item['temperature'],
