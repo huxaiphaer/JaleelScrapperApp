@@ -29,7 +29,7 @@ class JaleelscrapperPipeline(object):
         self.curr.execute("""DROP TABLE IF EXISTS  flights_tb""")
         self.curr.execute("""CREATE TABLE flights_tb(
            id int primary key auto_increment,
-           Destination VARCHAR(45),
+           Destination VARCHAR(75),
            Time TIME,
            Temperature VARCHAR(45),
            Note VARCHAR(45)

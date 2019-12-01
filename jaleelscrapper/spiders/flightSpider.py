@@ -1,8 +1,11 @@
 import datetime
 import json
+import os
+
 import requests
 import scrapy
 from ..items import JaleelscrapperItem
+from dotenv import load_dotenv
 
 
 class FlightDestinationSpider(scrapy.Spider):
@@ -47,5 +50,6 @@ class FlightDestinationSpider(scrapy.Spider):
                 yield {"error": "error"}
 
     def get_weather_response(self, destination):
+        load_dotenv()
         return requests.get(
-            "http://api.weatherstack.com/forecast?access_key=3ffdb844e799259dbbbb67768547d033&query=" + destination)
+            "http://api.weatherstack.com/forecast?access_key="+os.getenv("WEATHER_API_KEY")+"&query=" + destination)

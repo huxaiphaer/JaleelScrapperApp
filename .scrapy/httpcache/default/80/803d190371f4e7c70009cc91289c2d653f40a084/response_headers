@@ -1,0 +1,14 @@
+Date: Sun, 01 Dec 2019 16:57:30 GMT
+J-Cache-Duration: 600000
+Content-Type: text/html
+Xd1: html=true
+Xd2: has-j-cache-duration=true
+X-Ttl: 600.000
+X-Varnish: 225083183 225367638
+Age: 532
+Via: 1.1 varnish-v4
+X: HIT-www2.viennaairport.com
+Accept-Ranges: bytes
+X-Frame-Options: SAMEORIGIN
+Content-Encoding: gzip
+Vary: Accept-Encoding

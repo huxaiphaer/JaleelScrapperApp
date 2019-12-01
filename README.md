@@ -21,7 +21,7 @@ This is how you can setup the project on your local machine.
      git clone git@github.com:huxaiphaer/JaleelScrapperApp.git
 ```
 
-2. After cloning the repository,then install Mysql for the database and create a Database called `flights_db`.
+2. After cloning the repository,then install **Mysql** and create a Database called `flights_db`.
 
 3. Create a `.env` file in this `JaleelScrapperApp/jaleelscrapper/` directory, and add the following `VARIABLES` :
 
@@ -30,12 +30,14 @@ HOST= YOUR_HOST_NAME
 USER_NAME= YOUR_DB_USER_NAME
 PASSWORD= YOUR_PASSOWRD
 DATABASE= flights_db
-
+WEATHER_API_KEY= YOUR_WEATHER_API_KEY
 ```
 
+Regarding the variable `WEATHER_API_KEY` , you can create an account on this [WEATHER API SITE](https://weatherstack.com/) and get the Weather API key on the dashboard
+once you've signed up, it takes few minutes and the paste it alongside `WEATHER_API_KEY` variable e.g `WEATHER_API_KEY=6ydyyfy84bf84bf844HY84`. This is done because most of the API sites have limitations on requests.
 
 
-4.Then, run `cd jaleelscrapper` in the command or terminal , to Activate the virtual environment as below : 
+4.Then, run `cd jaleelscrapper` (to change the directory) in the command or terminal , so to Activate the virtual environment use the command below : 
 
 ##### On Windows command :
 `virtualenv env` , then `\env\Scripts\activate.bat`
