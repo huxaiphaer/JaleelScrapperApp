@@ -1,7 +1,7 @@
 ## JaleelScrapper
 
 This is a Web scrapper pipeline that outputs the weather at destinations of flights leaving Vienna
-airport.
+airport fron this [website](https://www.viennaairport.com/passagiere/ankunft__abflug/abfluege).
 
 
 ### Functionalites
@@ -19,14 +19,34 @@ Ensure that you are having Android studio, then clone the project with the follo
 
 ```
      git clone git@github.com:huxaiphaer/JaleelScrapperApp.git
-
 ```
 
-After cloning the repository, open the project and run the following command to start scrapping :
+After cloning the repository, `cd jaleelscrapper` in the command or terminal , then Activate the virtual environment as below : 
+
+##### On Windows command :
+`virtualenv env` , then `\env\Scripts\activate.bat`
+
+##### On Linux & Mac:
+`venv env` , then `/env/bin/python`
+
+finally , 
+open the project and run the following command to start scrapping :
 
 ```
     scrapy crawl flight_destinations
+```
 
+### Running unit tests
+
+type the folling in the terminal or command :
+```
+nosetests  
+```
+
+If you want to run tests with coverage, run the following command :
+
+```
+nosetests --with-coverage
 ```
 
 ### Languages/Libraries/Architecture Used.

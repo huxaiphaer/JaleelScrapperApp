@@ -1,15 +1,11 @@
-import subprocess
-import sys
 import unittest
-
-from scrapy import Spider
-from scrapy.http import Request
-
-from jaleelscrapper.jaleelscrapper.items import JaleelscrapperItem
-from jaleelscrapper.jaleelscrapper.spiders.flightSpider import FlightDestinationSpider
+import os
+import sys
+sys.path.append(os.getcwd())
+from jaleelscrapper.items import JaleelscrapperItem
 
 
-class TestParsers(unittest.TestCase):
+class TestParser(unittest.TestCase):
 
     def setUp(self):
         self.item = JaleelscrapperItem()

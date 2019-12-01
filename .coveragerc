@@ -1,0 +1,41 @@
+[report]=
+show_missing = True
+omit =
+      *api/songs/models*
+      */xmlrpc/*
+      *webbrowser.py*
+      *uuid.py*
+      *pathlib.py*
+      *numbers.py*
+      *http/*
+      *typing.py*
+      *html/*
+      *hmac.py*
+      *gzip.py*
+      *decimal.py*
+      *ctypes/*
+      *csv.py*
+      *cgi.py*
+      *zope/*
+      *twisted/*
+      *zipp.py*
+      *w3lib/*
+      *six.py*
+      *scrapy/*
+      *pytest.py*
+      *py/*
+      *pluggy/*
+      *packaging/*
+      *parsel/*
+      *more_itertools/*
+      *lxml/*
+      *incremental/*
+      *importlib_metadata/*
+      *cssselector/*
+      *constantly*
+      *attr/*
+      *cssselect/*
+      *_pytest/*
+
+
+
