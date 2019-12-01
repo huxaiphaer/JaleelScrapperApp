@@ -1,12 +1,12 @@
 ## JaleelScrapper
 
 This is a Web scrapper pipeline that outputs the weather at destinations of flights leaving Vienna
-airport fron this [website](https://www.viennaairport.com/passagiere/ankunft__abflug/abfluege).
+airport from this [website](https://www.viennaairport.com/passagiere/ankunft__abflug/abfluege).
 
 
 ### Functionalites
 
-  - Storing the Destination, Time, Temperature and Notes of the Flights form Vienna.
+  - Storing the **Destination**, **Time**, **Temperature** and **Notes** of the Flights from Vienna in the database.
   - Caching Scrapy requests.
 
 ## Getting Started.
@@ -52,7 +52,7 @@ nosetests --with-coverage
 ### Languages/Libraries/Architecture Used.
 
 - Python
-- [Scrapy](https://scrapy.org/)
+- [Scrapy Library](https://scrapy.org/)
 - Mysql
 - Mysql-Connector
 - [Weather Api](https://weatherstack.com/)
