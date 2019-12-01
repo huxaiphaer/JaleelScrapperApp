@@ -15,25 +15,40 @@ This is how you can setup the project on your local machine.
 
 #### Installation.
 
-Ensure that you are having Android studio, then clone the project with the following command :
+1 . Ensure that you are having Android studio, then clone the project with the following command :
 
 ```
      git clone git@github.com:huxaiphaer/JaleelScrapperApp.git
 ```
 
-After cloning the repository, `cd jaleelscrapper` in the command or terminal , then Activate the virtual environment as below : 
+2. After cloning the repository,then install Mysql for the database and create a Database called `flights_db`.
+
+3. Create a `.env` file in this `JaleelScrapperApp/jaleelscrapper/` directory, and add the following `VARIABLES` :
+
+```
+HOST= YOUR_HOST_NAME
+USER_NAME= YOUR_DB_USER_NAME
+PASSWORD= YOUR_PASSOWRD
+DATABASE= flights_db
+
+```
+
+
+
+4.Then, run `cd jaleelscrapper` in the command or terminal , to Activate the virtual environment as below : 
 
 ##### On Windows command :
 `virtualenv env` , then `\env\Scripts\activate.bat`
 
 ##### On Linux & Mac:
-`venv env` , then `/env/bin/python`
+first install pip `sudo apt-get install python3-pip`, then install virtual env `sudo pip3 install virtualenv `, the create it
+`venv env` , finally activate it `/env/bin/python`
 
 finally , 
 open the project and run the following command to start scrapping :
 
 ```
-    scrapy crawl flight_destinations
+    scrapy crawl flights_destinations
 ```
 
 ### Running unit tests

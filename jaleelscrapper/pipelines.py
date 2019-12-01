@@ -5,6 +5,8 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 import mysql.connector
+import os
+from dotenv import load_dotenv
 
 
 class JaleelscrapperPipeline(object):
@@ -14,10 +16,12 @@ class JaleelscrapperPipeline(object):
         self.create_table()
 
     def create_connection(self):
-        self.conn = mysql.connector.connect(host='localhost',
-                                            user='root',
-                                            password='',
-                                            database='flights_db'
+        # load variables from .env file
+        load_dotenv()
+        self.conn = mysql.connector.connect(host="" + os.getenv("HOST"),
+                                            user="" + os.getenv("USER_NAME"),
+                                            password="" + os.getenv("PASSWORD"),
+                                            database="" + os.getenv("DATABASE")
                                             )
         self.curr = self.conn.cursor()
 
