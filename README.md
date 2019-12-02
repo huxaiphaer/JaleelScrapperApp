@@ -18,7 +18,7 @@ This is how you can setup the project on your local machine.
 1 . Ensure that you are having Android studio, then clone the project with the following command :
 
 ```
-     git clone git@github.com:huxaiphaer/JaleelScrapperApp.git
+   $  git clone git@github.com:huxaiphaer/JaleelScrapperApp.git
 ```
 
 2. After cloning the repository,then install **Mysql** and create a Database called `flights_db`.
@@ -40,7 +40,7 @@ once you've signed up, it takes few minutes and the paste it alongside `WEATHER_
 4.Then, run `cd jaleelscrapper` (to change the directory) in the command or terminal , so to Activate the virtual environment use the command below : 
 
 ##### On Windows command :
-`virtualenv env` , then `\env\Scripts\activate.bat`
+`$ virtualenv env` , then `$ \env\Scripts\activate.bat`
 
 ##### On Linux & Mac:
 first install pip `sudo apt-get install python3-pip`, then install virtual env `sudo pip3 install virtualenv `, the create it
@@ -50,20 +50,34 @@ finally ,
 open the project and run the following command to start scrapping :
 
 ```
-    scrapy crawl flights_destinations
+   $ scrapy crawl flights_destinations
 ```
 
 ### Running unit tests
 
-type the folling in the terminal or command :
+type the following in the terminal or command :
 ```
-nosetests  
+$ nosetests  
 ```
 
 If you want to run tests with coverage, run the following command :
 
 ```
-nosetests --with-coverage
+$ nosetests --with-coverage
+```
+
+#### Running Scrapy Tests with Test-Scrapy Library
+
+Type the following command to run with [Scrapy Test Library](https://pypi.org/project/scrapy-test/) against live data
+
+```
+$ scrapy-test
+```
+
+Then , run the following to run against cached data :
+
+```
+$ scrapy-test --cache
 ```
 
 ### Languages/Libraries/Architecture Used.
