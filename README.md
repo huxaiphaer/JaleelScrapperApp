@@ -15,15 +15,15 @@ This is how you can setup the project on your local machine.
 
 #### Installation.
 
-1 . Ensure that you are having Android studio, then clone the project with the following command :
+1 . Clone the project with the following command :
 
 ```
    $  git clone git@github.com:huxaiphaer/JaleelScrapperApp.git
 ```
 
-2. After cloning the repository,then install **Mysql** and create a Database called `flights_db`.
+2 . After cloning the repository,then install **Mysql** and create a Database called `flights_db`.
 
-3. Create a `.env` file in this `JaleelScrapperApp/jaleelscrapper/` directory, and add the following `VARIABLES` :
+3 . Create a `.env` file in this `JaleelScrapperApp/jaleelscrapper/` directory, and add the following `VARIABLES` :
 
 ```
 HOST= YOUR_HOST_NAME
@@ -37,21 +37,29 @@ Regarding the variable `WEATHER_API_KEY` , you can create an account on this [WE
 once you've signed up, it takes few minutes and the paste it alongside `WEATHER_API_KEY` variable e.g `WEATHER_API_KEY=6ydyyfy84bf84bf844HY84`. This is done because most of the API sites have limitations on requests.
 
 
-4.Then, run `cd jaleelscrapper` (to change the directory) in the command or terminal , so to Activate the virtual environment use the command below : 
+
+4 . Activate the virtual environment use the command below : 
 
 ##### On Windows command :
-`$ virtualenv env` , then `$ \env\Scripts\activate.bat`
+
+first install virtualenv with this command `$ pip install virtualenv` then, install
+`$ virtualenv env` , then `$ \env\Scripts\activate.bat` or `$ \env\Scripts\activate`
 
 ##### On Linux & Mac:
-first install pip `sudo apt-get install python3-pip`, then install virtual env `sudo pip3 install virtualenv `, the create it
-`venv env` , finally activate it `/env/bin/python`
+first install pip `sudo apt-get install python3-pip`, then install virtual env `sudo apt install virtualenv `, the create it
+`$ virtualenv env` , finally activate it with `$ source env/bin/activate`
 
-finally , 
-open the project and run the following command to start scrapping :
+5 . Then run this command to install all the packages `$pip3 install -r requirements.txt`
+
+
+6 . finally , change the directory by the command `$ cd cd jaleelscrapper`
+after start scrapping with the following command :
 
 ```
    $ scrapy crawl flights_destinations
 ```
+
+If the process finishes, you should have some data in your Database.
 
 ### Running unit tests
 
