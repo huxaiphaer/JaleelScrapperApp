@@ -84,6 +84,7 @@ $ scrapy-test --cache
 
 - Python
 - [Scrapy Library](https://scrapy.org/)
+- [Scrapy-Test Library](https://pypi.org/project/scrapy-test/)
 - Mysql
 - Mysql-Connector
 - [Weather Api](https://weatherstack.com/)

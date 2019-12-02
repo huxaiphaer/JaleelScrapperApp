@@ -11,4 +11,4 @@ class TestSpider(FlightDestinationSpider):
 
     def start_requests(self):
         for url in self.test_urls:
-            yield Request(url, self.parse_submission)
+            yield Request(url, self.parse)
