@@ -18,10 +18,11 @@ class JaleelscrapperPipeline(object):
     def create_connection(self):
         # load variables from .env file
         load_dotenv()
-        self.conn = mysql.connector.connect(host="" + os.getenv("HOST"),
-                                            user="" + os.getenv("USER_NAME"),
-                                            password="" + os.getenv("PASSWORD"),
-                                            database="" + os.getenv("DATABASE")
+        self.conn = mysql.connector.connect(host=os.getenv("HOST"),
+                                            user=os.getenv("USER_NAME"),
+                                            password=os.getenv("PASSWORD"),
+                                            database=os.getenv("DATABASE"),
+                                            auth_plugin='mysql_native_password'
                                             )
         self.curr = self.conn.cursor()
 
